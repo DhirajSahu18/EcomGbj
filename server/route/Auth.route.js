@@ -1,7 +1,7 @@
 import express from 'express'
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import User from '../models/User'
+import User from '../models/User.model.js'
 import { z } from 'zod'
 
 const router = express.Router()
@@ -18,7 +18,7 @@ const loginSchema = z.object({
 })
 
 // Register route
-router.post('/register', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     // Validate and sanitize input
     const { username, password } = registerSchema.parse(req.body)
@@ -94,4 +94,4 @@ router.post('/login', async (req, res) => {
   }
 })
 
-export { router}
+export default router

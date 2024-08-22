@@ -27,7 +27,7 @@ const orderSchema = new mongoose.Schema({
         required: true
     },
     shippingAddress: {
-        type : mixed,
+        type : mongoose.Schema.Types.Mixed,
         required: true
     },
     paymentMethod: {
@@ -53,4 +53,4 @@ const orderSchema = new mongoose.Schema({
 
 const Order = mongoose.model('Order', orderSchema);
 
-export { Order };
+export default Order;

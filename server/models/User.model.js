@@ -12,18 +12,9 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
 }, {
-  timestamps: true,
-  toJSON: {
-    virtuals: true,
-    transform: function (doc, ret) {
-      ret.id = ret._id
-      delete ret._id
-      delete ret.__v
-      return ret
-    }
-  }
+  timestamps: true
 })
 
 const User = mongoose.model('User', userSchema)
 
-export {User}
+export default User

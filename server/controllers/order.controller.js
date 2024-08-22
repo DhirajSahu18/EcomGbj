@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { z } from "zod";
-import { Order } from "../models/order.model.js";
+import Order from "../models/order.model.js";
 
 const orderValidationSchema = z.object({
   user: z.string().refine((val) => mongoose.Types.ObjectId.isValid(val), {
